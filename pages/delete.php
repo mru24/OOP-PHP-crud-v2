@@ -14,7 +14,7 @@ if (isset($_GET['id'])) {
   if (isset($_POST['submit'])) {
     $id = $row->id;
     $q = 'DELETE FROM learn WHERE id = :id';
-    $posts->delete($q);
+    $posts->delete($q, $id);
     header('Location: '.ROOT_URL);
   }
 }
@@ -29,9 +29,9 @@ if (isset($_GET['id'])) {
 
     <div class="delete">
       <h2>Are you sure to delete post:</h2>
-      <h3><?php echo $row->title; ?></h3>
+      <h3 class="center"><?php echo $row->title; ?></h3>
 
-      <p><?php echo $row->body; ?></p>
+      <p class="center"><?php echo $row->body; ?></p>
 
       <div class="button-container">
         <form action="<?php $_SERVER['PHP_SELF'] ?>" method="post">

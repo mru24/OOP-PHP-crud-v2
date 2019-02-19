@@ -230,10 +230,23 @@ form .form-cell textarea {
 }
 
 .container .delete h2 {
+  margin-bottom: 25px;
+}
+
+.container .delete h3, .container .delete p {
   margin-bottom: 15px;
 }
 
-.container .delete form {
-  margin: auto;
+.container .delete .button-container {
+  flex-direction: column;
+  justify-content: center;
+}
+
+.container .delete .button-container form {
+  width: auto;
+  margin: -10px;
+  padding: -10px;
+  background: none;
+  border: none;
   margin-top: 40px;
 }

@@ -35,7 +35,7 @@ class Posts extends Database {
     $this->execute();
   }
 
-  public function delete($q) {
+  public function delete($q, $id) {
     $this->query($q);
     $this->bind(':id', $id);
     $this->execute();

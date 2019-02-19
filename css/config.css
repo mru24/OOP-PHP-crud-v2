@@ -206,3 +206,7 @@ form .form-cell textarea {
   resize: none;
   height: 140px;
 }
+
+.center {
+  text-align: center;
+}
