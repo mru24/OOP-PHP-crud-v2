@@ -3,34 +3,48 @@ include 'classes/posts.php';
 
 include 'inc/header.php';
 
+// SHOW ALL POSTS
+$q = 'SELECT * FROM learn ORDER BY time DESC';
+$rows = $posts->showPosts($q);
+
 ?>
 
 <div class="container">
   <div class="jumbotron">
-    <h1>Some title</h1>
+    <h1>My blog</h1>
+    <h4>Welcome to my page</h4>
   </div>
 
   <div class="main">
-    <?php
-      $q = 'SELECT * FROM learn ORDER BY time DESC';
-      $rows = $posts->showPosts($q);
 
-    foreach ($rows as $row): ?>
+    <?php foreach ($rows as $row): ?>
+
       <div class="post">
-        <h3><?php echo $row->title; ?></h3>
+        <a href="pages/post.php?id=<?php echo $row->id; ?>">
+          <h3><?php echo $row->title; ?></h3>
+        </a>
+
         <p><?php echo $row->body; ?></p>
       </div>
+
     <?php endforeach; ?>
+
   </div>
 
   <div class="aside">
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+    <?php include 'inc/aside.php'; ?>
+
   </div>
 
   <div class="clear-float"></div>
-  <a href="pages/add.php">
-    <button type="button" name="button">Add Post</button>
-  </a>
+
+  <div class="button-container">
+    <a href="pages/add.php">
+      <button type="button" name="button">Add Post</button>
+    </a>
+  </div>
+
 
 </div>
 

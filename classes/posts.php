@@ -13,12 +13,26 @@ class Posts extends Database {
     return $rows;
   }
 
-  public function add($title, $body, $q){
+  public function showPost($q, $id) {
+    $this->query($q);
+    $this->bind(':id', $id);
+    $row = $this->showOne();
+    return $row;
+  }
+
+  public function add($title, $body, $q) {
     $this->query($q);
     $this->bind(':title', $title);
     $this->bind(':body', $body);
     $this->execute();
-    header('Location: '.ROOT);
+  }
+
+  public function edit($q, $title, $body, $id) {
+    $this->query($q);
+    $this->bind(':title', $title);
+    $this->bind(':body', $body);
+    $this->bind(':id', $id);
+    $this->execute();
   }
 }
 

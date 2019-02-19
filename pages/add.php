@@ -1,4 +1,6 @@
 <?php
+define('TITLE', 'add post');
+
 include '../classes/posts.php';
 
 if (isset($_POST['submit'])) {
@@ -6,19 +8,18 @@ if (isset($_POST['submit'])) {
   $body = $_POST['body'];
   $q = 'INSERT INTO learn (title, body) VALUES (:title, :body)';
   $posts->add($title, $body, $q);
+  header('Location: '.ROOT);
 }
 
 include ROOT.'inc/header.php';
 ?>
 
 <div class="container">
-  <div class="jumbotron">
-    <h1>post</h1>
-  </div>
-  <a href="<?php echo ROOT; ?>">
-    <button type="button" name="button">Back</button>
-  </a>
-  <hr>
+
+  <?php
+    include ROOT.'inc/jumbotron.php';
+  ?>
+
   <div class="main">
     <form action="<?php $_SERVER['PHP_SELF'] ?>" method="post">
       <div class="form-cell">
@@ -27,14 +28,21 @@ include ROOT.'inc/header.php';
       </div>
       <div class="form-cell">
         <label>Post</label>
-        <input type="text" name="body">
+        <textarea type="text" name="body"></textarea>
       </div>
-      <button type="submit" name="submit">Submit</button>
+
+      <div class="button-container">
+        <button class="green" type="submit" name="submit">Submit</button>
+        <a href="<?php echo ROOT; ?>">
+          <button type="button" name="button">Cancel</button>
+        </a>
+      </div>
+
     </form>
   </div>
 
   <div class="aside">
-
+    <?php include ROOT.'inc/aside.php'; ?>
   </div>
 
 </div>

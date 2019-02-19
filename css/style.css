@@ -65,6 +65,7 @@ body .container .jumbotron {
   padding: 60px;
   border-radius: 5px;
   text-transform: uppercase;
+  text-shadow: 0 0 10px #444;
   background: #666;
   color: #eee;
 }
@@ -116,19 +117,39 @@ body .container .aside {
   clear: both;
 }
 
+.button-container {
+  display: flex;
+  flex-direction: row;
+}
+
 button {
   margin: 15px;
-  padding: 10px 20px;
+  padding: 10px;
+  width: 140px;
   border: none;
   border-radius: 5px;
   background: #f19c39;
   color: #eee;
+  font-size: 1.1em;
+  font-weight: bold;
   cursor: pointer;
   transition: .4s;
 }
 
 button:hover {
-  background: green;
+  background: #1a6e34 !important;
+}
+
+.red {
+  background: red !important;
+}
+
+.green {
+  background: green !important;
+}
+
+.green:hover {
+  background: #0a6875 !important;
 }
 
 form {
@@ -144,22 +165,31 @@ form .form-cell {
   width: 100%;
 }
 
-form .form-cell label, form .form-cell input {
+form .form-cell label {
+  padding-left: 10px;
+  font-weight: bold;
+}
+
+form .form-cell input, form .form-cell textarea {
   display: block;
   width: 100%;
   margin-bottom: 10px;
+  padding-left: 10px;
+  border: 1px solid #bbb;
+  border-radius: 5px;
 }
 
 form .form-cell input {
   height: 30px;
-  padding-left: 10px;
-  border: 1px solid #bbb;
-  border-radius: 5px;
+}
+
+form .form-cell textarea {
+  resize: none;
+  height: 140px;
 }
 
 .post {
   margin: 30px 0;
   padding: 15px 0;
   border-bottom: 1px solid #bbb;
-  border-top: 1px solid #bbb;
 }

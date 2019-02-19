@@ -61,6 +61,7 @@ body
       padding: 60px
       @include borderRadius
       text-transform: uppercase
+      text-shadow: 0 0 10px #444
       background: #666
       color: #eee
       @include tablet
@@ -86,17 +87,31 @@ body
 .clear-float
   clear: both
 
+.button-container
+  display: flex
+  flex-direction: row
+
 button
   margin: 15px
-  padding: 10px 20px
+  padding: 10px
+  width: 140px
   border: none
   @include borderRadius
   background: #f19c39
   color: #eee
+  font-size: 1.1em
+  font-weight: bold
   cursor: pointer
   @include transition
   &:hover
-    background: green
+    background: #1a6e34 !important
+
+.red
+  background: red !important
+.green
+  background: green !important
+  &:hover
+    background: #0a6875 !important
 
 form
   width: 80%
@@ -107,12 +122,18 @@ form
   background: #eee
   .form-cell
     width: 100%
-    label, input
+    label
+      padding-left: 10px
+      font-weight: bold
+    input, textarea
       display: block
       width: 100%
       margin-bottom: 10px
-    input
-      height: 30px
       padding-left: 10px
       border: $borderLT
       @include borderRadius
+    input
+      height: 30px
+    textarea
+      resize: none
+      height: 140px
