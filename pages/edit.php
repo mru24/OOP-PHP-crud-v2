@@ -39,7 +39,7 @@ include ROOT.'inc/header.php';
       </div>
 
       <div class="button-container">
-        <button class="green" type="submit" name="submit">Save changes</button>
+        <button class="green" type="submit" name="submit">Save</button>
         <a href="<?php echo ROOT; ?>">
           <button type="button" name="button">Cancel</button>
         </a>

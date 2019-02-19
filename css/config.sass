@@ -90,8 +90,11 @@ body
 .button-container
   display: flex
   flex-direction: row
+  @include mobile
+    flex-direction: column
 
 button
+  display: block
   margin: 15px
   padding: 10px
   width: 140px
@@ -101,13 +104,19 @@ button
   color: #eee
   font-size: 1.1em
   font-weight: bold
+  text-shadow: 0 0 5px #666
   cursor: pointer
   @include transition
+  @include mobile
+    width: 80%
+    margin: 10px auto
   &:hover
     background: #1a6e34 !important
 
 .red
   background: red !important
+  &:hover
+    background: #937f19 !important
 .green
   background: green !important
   &:hover

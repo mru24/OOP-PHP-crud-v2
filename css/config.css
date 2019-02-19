@@ -122,7 +122,14 @@ body .container .aside {
   flex-direction: row;
 }
 
+@media (max-width: 750px) {
+  .button-container {
+    flex-direction: column;
+  }
+}
+
 button {
+  display: block;
   margin: 15px;
   padding: 10px;
   width: 140px;
@@ -132,8 +139,16 @@ button {
   color: #eee;
   font-size: 1.1em;
   font-weight: bold;
+  text-shadow: 0 0 5px #666;
   cursor: pointer;
   transition: .4s;
+}
+
+@media (max-width: 750px) {
+  button {
+    width: 80%;
+    margin: 10px auto;
+  }
 }
 
 button:hover {
@@ -142,6 +157,10 @@ button:hover {
 
 .red {
   background: red !important;
+}
+
+.red:hover {
+  background: #937f19 !important;
 }
 
 .green {

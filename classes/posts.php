@@ -34,6 +34,12 @@ class Posts extends Database {
     $this->bind(':id', $id);
     $this->execute();
   }
+
+  public function delete($q) {
+    $this->query($q);
+    $this->bind(':id', $id);
+    $this->execute();
+  }
 }
 
 $posts = new Posts;
