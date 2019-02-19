@@ -1,0 +1,118 @@
+// FONTS
+@import url('https://fonts.googleapis.com/css?family=Montserrat:200,400,900')
+
+// MIXINS
+
+  // RESPONSIVE QUERIES
+@mixin tablet
+  @media (max-width: 1300px)
+    @content
+
+@mixin mobile
+  @media (max-width: 750px)
+    @content
+
+
+@mixin borderRadius
+  border-radius: 5px
+
+@mixin transition
+  transition: .4s
+
+// VARIABLES
+$borderLT: 1px solid #bbb
+
+
+// GLOBAL STYLES
+li
+  list-style: none
+a, a:visited, a:active, a:hover
+  text-decoration: none
+
+hr
+  border: none
+  border-bottom: $borderLT
+*
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+body, html
+  min-height: 100vh
+body
+  background: #f5f5f5
+  @include tablet
+    background: #f1f1f1
+  @include mobile
+    background: #e9e9e9
+  font-family: 'Montserrat', sans-serif
+  .container
+    min-height: 100vh
+    background: #f9f9f9
+    width: 80%
+    margin: auto
+    padding: 40px 20px
+    @include tablet
+      width: 90%
+      padding: 20px
+    @include mobile
+      width: 98%
+      padding: 10px
+    .jumbotron
+      padding: 60px
+      @include borderRadius
+      text-transform: uppercase
+      background: #666
+      color: #eee
+      @include tablet
+        padding: 40px
+        font-size: .8em
+    .main
+      width: 80%
+      padding: 20px
+      float: left
+      @include tablet
+        width: 65%
+      @include mobile
+        width: 100%
+    .aside
+      width: 20%
+      padding: 20px
+      float: left
+      @include tablet
+        width: 35%
+      @include mobile
+        display: none
+
+.clear-float
+  clear: both
+
+button
+  margin: 15px
+  padding: 10px 20px
+  border: none
+  @include borderRadius
+  background: #f19c39
+  color: #eee
+  cursor: pointer
+  @include transition
+  &:hover
+    background: green
+
+form
+  width: 80%
+  margin: 10px
+  padding: 10px
+  border: $borderLT
+  @include borderRadius
+  background: #eee
+  .form-cell
+    width: 100%
+    label, input
+      display: block
+      width: 100%
+      margin-bottom: 10px
+    input
+      height: 30px
+      padding-left: 10px
+      border: $borderLT
+      @include borderRadius
