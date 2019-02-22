@@ -4,8 +4,8 @@ define('TITLE', 'add post');
 include '../classes/posts.php';
 
 if (isset($_POST['submit'])) {
-  $title = $_POST['title'];
-  $body = $_POST['body'];
+  $title = htmlentities($_POST['title'], ENT_QUOTES, "UTF-8");
+  $body = htmlentities($_POST['body'], ENT_QUOTES, "UTF-8");
   $q = 'INSERT INTO learn (title, body) VALUES (:title, :body)';
   $posts->add($title, $body, $q);
   header('Location: '.ROOT);

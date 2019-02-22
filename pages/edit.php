@@ -10,8 +10,8 @@ if (isset($_GET['id'])) {
 
   if (isset($_POST['submit'])) {
     $id = $row->id;
-    $title = $_POST['title'];
-    $body = $_POST['body'];
+    $title = htmlentities($_POST['title'], ENT_QUOTES, "UTF-8");
+    $body = htmlentities($_POST['body'], ENT_QUOTES, "UTF-8");
     $q = 'UPDATE learn SET title = :title, body = :body WHERE id = :id';
     $posts->edit($q, $title, $body, $id);
     header('Location: '.ROOT_URL);
