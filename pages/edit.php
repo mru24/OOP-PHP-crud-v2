@@ -4,7 +4,7 @@ define('TITLE', 'edit post');
 include '../classes/posts.php';
 
 if (isset($_GET['id'])) {
-  $id = $_GET['id'];
+  $id = $posts->strip_bad_chars($_GET['id']);
   $q = 'SELECT * FROM learn WHERE id = :id';
   $row = $posts->showPost($q, $id);
 
